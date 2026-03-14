@@ -52,24 +52,6 @@
             "system prompt": "Hidden instructions loaded by the app before you type anything. You do not see them, but they shape every response."
           },
           "children": []
-        },
-        {
-          "id": "hallucination",
-          "statement": "It does not know when it is wrong.",
-          "explanation": "Because AI is just predicting the next word, it has no idea if what it wrote is true or false. A correct fact and a made up fact look exactly the same to it. It will cite a book that does not exist with the same confidence as a real one. Always verify anything that matters.",
-          "terms": {
-            "hallucination": "When AI confidently writes something that is completely made up. It is not trying to lie. It just cannot tell the difference between real and fake."
-          },
-          "children": []
-        },
-        {
-          "id": "bias",
-          "statement": "It learned from everything we wrote, good and bad.",
-          "explanation": "AI was trained on billions of pages written by people. That includes great writing, but also stereotypes, outdated views, and plain wrong information. It does not filter any of this out. It just picks whatever pattern fits best.",
-          "terms": {
-            "bias": "When AI consistently leans one way because the text it learned from leaned that way. It reflects human writing, the good parts and the bad parts."
-          },
-          "children": []
         }
       ]
     },
@@ -129,6 +111,106 @@
           "terms": {
             "context window": "The fixed amount of text AI can see at once. When it fills up, older messages get dropped silently."
           },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "hallucination",
+      "statement": "It does not know when it is wrong.",
+      "explanation": "AI does not fact check itself. It predicts words that sound right, not words that are right. A true statement and a made up statement look exactly the same to it. It will cite a book that does not exist, invent a statistic, or describe an event that never happened, all with the same confidence.\n\nThis is not a bug. It is how word prediction works. AI has no connection to reality. It has never been to a hospital, read a real newspaper, or verified a phone number. It learned patterns from text and it reproduces those patterns. Sometimes the pattern matches reality. Sometimes it does not. AI cannot tell the difference.",
+      "experiment": {
+        "intro": "Ask AI to recommend books by a specific author and then verify the results:",
+        "prompts": [
+          {
+            "label": "Try in ChatGPT",
+            "text": "List 5 books written by Brene Brown with a one sentence summary of each.",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=List%205%20books%20written%20by%20Brene%20Brown%20with%20a%20one%20sentence%20summary%20of%20each."
+          },
+          {
+            "label": "Try in Gemini",
+            "text": "List 5 books written by Brene Brown with a one sentence summary of each.",
+            "link": "https://gemini.google.com/app",
+            "buttonText": "Try in Gemini"
+          }
+        ],
+        "result": "Now search for each book title online. Some will be real. Some might not exist at all, or the summary will describe a completely different book. AI did not check. It just predicted what titles and summaries would sound right next to the author's name. This is called hallucination and it happens constantly."
+      },
+      "terms": {
+        "hallucination": "When AI confidently writes something that is completely made up. It is not lying on purpose. It just cannot tell the difference between real and fake.",
+        "confabulation": "Another word for hallucination. AI fills gaps with plausible sounding content, like a person who makes up details to complete a story they half remember."
+      },
+      "children": [
+        {
+          "id": "verify-everything",
+          "statement": "Always verify anything that matters.",
+          "explanation": "If you are going to send that email, check the facts first. If you are going to use that number in a report, verify it. If AI gave you a name, a date, a quote, or a reference, look it up before you trust it.\n\nAI is great for drafts, brainstorming, and getting started. It is terrible as a source of truth. Treat its output the way you would treat advice from a confident stranger. It might be right. It might be completely wrong. You cannot tell without checking.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "confident-not-correct",
+          "statement": "Confidence is not the same as correctness.",
+          "explanation": "AI never says \"I am not sure about this\" unless it has been specifically instructed to. It presents everything with the same tone, whether it is a well established fact or something it just invented. There is no built in signal that tells you when AI is guessing versus when it actually has strong patterns to draw from.\n\nThis is dangerous because humans naturally trust confident language. When someone says something clearly and without hesitation, we tend to believe it. AI exploits this instinct without meaning to.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "bias",
+          "statement": "It learned from everything we wrote, good and bad.",
+          "explanation": "AI was trained on billions of pages written by people. That includes great writing, but also stereotypes, outdated views, and plain wrong information. It does not filter any of this out. It just picks whatever pattern fits best.\n\nAsk it to describe a CEO and it might default to a man. Ask it about certain countries and it might repeat outdated stereotypes. This is not AI having opinions. It is AI reflecting patterns from the text it learned from. The training data contained bias, so the output contains bias.",
+          "terms": {
+            "bias": "When AI consistently leans one way because the text it learned from leaned that way. It reflects human writing, the good parts and the bad parts.",
+            "training data": "The massive collection of text AI learned from. Books, websites, articles, forums, code. Everything it knows comes from this data."
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "no-memory",
+      "statement": "It forgets you the moment you leave.",
+      "explanation": "AI does not remember you. When you close a conversation and start a new one, AI has no idea who you are, what you discussed, or what you asked it to do differently. Every new chat is a completely blank slate.\n\nIf an app seems to remember your preferences or your name, that is the app doing it, not the AI. The app saves notes about you and quietly includes them in the system prompt next time. The AI itself has zero memory between conversations.",
+      "experiment": {
+        "intro": "Try this in two separate conversations to prove AI has no memory:",
+        "prompts": [
+          {
+            "label": "Step 1: Tell it your name",
+            "text": "My name is Alex and I prefer short answers. Remember this.",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=My%20name%20is%20Alex%20and%20I%20prefer%20short%20answers.%20Remember%20this."
+          },
+          {
+            "label": "Step 2: New chat, ask for your name",
+            "text": "What is my name and how do I prefer my answers?",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=What%20is%20my%20name%20and%20how%20do%20I%20prefer%20my%20answers%3F"
+          }
+        ],
+        "result": "In step 2, AI has no idea who you are. It cannot recall anything from step 1 because that conversation is gone. The temporary chat ensures no app level memory kicks in. Every conversation is independent. What you said in one chat does not exist in another."
+      },
+      "terms": {
+        "stateless": "AI does not carry information between conversations. Each chat starts fresh with no knowledge of previous interactions.",
+        "memory features": "Some apps save notes about you and inject them into the system prompt. This is app level memory, not AI memory. The AI still starts fresh every time."
+      },
+      "children": [
+        {
+          "id": "app-memory",
+          "statement": "When it remembers you, that is the app talking.",
+          "explanation": "ChatGPT has a memory feature. Claude has project instructions. These are not AI remembering you. These are apps storing text about you and pasting it into the system prompt before every conversation.\n\nThis means the app controls what AI remembers about you. It decides what to save, what to include, and what to leave out. You can usually view and edit these saved memories in the app settings. If something feels off about how AI talks to you, check what the app has stored.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "start-fresh",
+          "statement": "Starting over is sometimes the best move.",
+          "explanation": "Long conversations accumulate noise. Old instructions, wrong turns, conflicting requests, all of it stays in the context and influences every new response. Sometimes the best thing you can do is start a new conversation.\n\nCopy the key information you need, open a fresh chat, and give it a clean prompt. You will often get better results in one clean message than in a messy conversation that has been going back and forth for an hour.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "context-is-temporary",
+          "statement": "Everything you share disappears when you close the chat.",
+          "explanation": "Any document you uploaded, any personal detail you shared, any correction you made, all of it exists only within that one conversation. Close it and the AI has no access to any of it.\n\nThis is worth knowing for two reasons. First, you need to re-share relevant context in every new chat. Second, sensitive information you share in a conversation does not persist in the AI itself, though the app may store conversation logs separately.",
+          "terms": {},
           "children": []
         }
       ]
