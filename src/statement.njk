@@ -21,15 +21,15 @@ eleventyComputed:
   <h1 class="post-title">{{ item.statement }}</h1>
 </div>
 
-{% if item.image %}
-<div class="post-image">
-  <img src="{{ item.image | url }}" alt="{{ item.imageAlt or item.statement }}" loading="lazy" />
-</div>
-{% endif %}
-
 <div class="post-content">
   {{ item.explanation | replace("\n\n", "</p><p>") | replace("\n", " ") | safe }}
 </div>
+
+{% if item.image %}
+<div class="post-image">
+  <img src="{{ item.image | url }}" alt="{{ item.imageAlt or item.statement }}" loading="lazy" onclick="this.closest('.post-image').classList.toggle('zoomed')" />
+</div>
+{% endif %}
 
 {% if item.experiment %}
 <div class="section" style="margin-top: var(--spacing-9);">

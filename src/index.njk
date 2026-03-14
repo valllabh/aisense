@@ -11,7 +11,7 @@ title: AI Sense
 </div>
 
 <div class="section">
-  <div class="section-title">{{ aisense.statements | length }} Senses</div>
+  <div class="section-title">{{ aisense.statements | length }} {{ "Sense" if aisense.statements | length == 1 else "Senses" }}</div>
 
   <div class="section-list">
     {% for item in aisense.statements %}
