@@ -9,7 +9,7 @@ eleventyComputed:
   title: "{{ item.statement }} | AI Sense"
 ---
 
-<a href="{{ '/' | url }}" class="back-link">&larr; All gut feelings</a>
+<a href="{{ '/' | url }}" class="back-link">&larr; All senses</a>
 
 {% set idx = 0 %}
 {% for s in aisense.statements %}
@@ -17,13 +17,40 @@ eleventyComputed:
 {% endfor %}
 
 <div class="post-header">
-  <span class="post-label">Gut feeling {{ idx }} of 7</span>
+  <span class="post-label">Sense {{ idx }} of {{ aisense.statements | length }}</span>
   <h1 class="post-title">{{ item.statement }}</h1>
 </div>
 
-<div class="post-content">
-  <p>{{ item.explanation }}</p>
+{% if item.image %}
+<div class="post-image">
+  <img src="{{ item.image | url }}" alt="{{ item.imageAlt or item.statement }}" loading="lazy" />
 </div>
+{% endif %}
+
+<div class="post-content">
+  {{ item.explanation | replace("\n\n", "</p><p>") | replace("\n", " ") | safe }}
+</div>
+
+{% if item.experiment %}
+<div class="section" style="margin-top: var(--spacing-9);">
+  <div class="section-title">Try It Yourself</div>
+  <p style="color: var(--color-foreground); font-size: var(--font-small); margin-bottom: var(--spacing-5);">{{ item.experiment.intro }}</p>
+  <div class="experiment-grid">
+    {% for p in item.experiment.prompts %}
+    <div class="experiment-card">
+      <span class="experiment-label">{{ p.label }}</span>
+      <p class="experiment-text">{{ p.text }}</p>
+      <a href="{{ p.link }}" target="_blank" rel="noopener" class="button experiment-button">Try in ChatGPT &rarr;</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% if item.experiment.result %}
+  <div class="experiment-result">
+    {{ item.experiment.result | replace("\n\n", "</p><p>") | replace("\n", " ") | safe }}
+  </div>
+  {% endif %}
+</div>
+{% endif %}
 
 {% if item.terms and item.terms | length %}
 <div class="section" style="margin-top: var(--spacing-9);">
@@ -58,7 +85,7 @@ eleventyComputed:
 </div>
 {% endif %}
 
-<nav class="post-nav" aria-label="Statement navigation">
+<nav class="post-nav" aria-label="Sense navigation">
   {% set prevIdx = idx - 2 %}
   {% set nextIdx = idx %}
   {% if prevIdx >= 0 %}

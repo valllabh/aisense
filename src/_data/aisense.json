@@ -3,95 +3,100 @@
   "date": "March 2026",
   "statements": [
     {
-      "id": "guessing",
-      "duration": 8,
-      "statement": "AI is guessing, not knowing.",
-      "explanation": "When you ask AI something, it does not look up the answer. It predicts what words should come next based on everything it read during training. Sometimes it gets it right. Sometimes it makes things up. It has no idea which is which.",
-      "terms": {
-        "guessing": "AI picks the most likely next word, then the next, then the next. It is like autocomplete on your phone but for entire paragraphs.",
-        "training": "Before you ever used it, AI read billions of pages of text from the internet. That is how it learned to write. But reading is not the same as understanding."
+      "id": "word-prediction",
+      "statement": "Every word depends on the words before it.",
+      "image": "/assets/sense-1-word-prediction.png",
+      "imageAlt": "Diagram showing how AI reads your context and predicts the most likely next word from many possibilities",
+      "explanation": "AI does not understand your question and then write a reply. It predicts one word at a time. It looks at all the words that came before, and picks the most likely next word. Then it looks at everything again, including the word it just picked, and predicts the next one. This keeps going until the full response is built.\n\nThis means every word AI has seen so far shapes what comes next. The previous words are the context. Change the context, change the output.\n\nThis is why what you type matters so much. Your words are the context AI uses to predict everything that follows.",
+      "experiment": {
+        "intro": "Open ChatGPT and try these three prompts in separate conversations:",
+        "prompts": [
+          {
+            "label": "Prompt A",
+            "text": "Write a paragraph about a bank.",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=Write%20a%20paragraph%20about%20a%20bank."
+          },
+          {
+            "label": "Prompt B",
+            "text": "I am a fisherman. Write a paragraph about a bank.",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=I%20am%20a%20fisherman.%20Write%20a%20paragraph%20about%20a%20bank."
+          },
+          {
+            "label": "Prompt C",
+            "text": "I am a financial advisor. Write a paragraph about a bank.",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=I%20am%20a%20financial%20advisor.%20Write%20a%20paragraph%20about%20a%20bank."
+          }
+        ],
+        "result": "Notice how the same word \"bank\" produces completely different results. In prompt A, AI could go either way. In prompt B, it writes about a river bank. In prompt C, it writes about a financial bank.\n\nYou did not change the question. You changed the context. And that changed everything."
       },
+      "terms": {},
       "children": [
         {
           "id": "hallucination",
-          "statement": "It will make things up and sound completely sure about it.",
-          "explanation": "AI does not know when it is wrong. It writes fake facts with the same confidence as real ones. It might invent a book that does not exist, cite a law that was never written, or give you directions to a place that is not there. Always double check anything that matters.",
+          "statement": "It does not know when it is wrong.",
+          "explanation": "Because AI is just predicting the next word, it has no idea if what it wrote is true or false. A correct fact and a made up fact look exactly the same to it. It will cite a book that does not exist with the same confidence as a real one. Always verify anything that matters.",
           "terms": {
-            "hallucination": "When AI confidently presents something that is completely made up. It is not trying to lie. It just does not know the difference between real and fake."
+            "hallucination": "When AI confidently writes something that is completely made up. It is not trying to lie. It just cannot tell the difference between real and fake."
           },
           "children": []
         },
         {
           "id": "bias",
-          "statement": "It learned from us, including our worst habits.",
-          "explanation": "AI learned from text written by people. That text contains stereotypes, outdated views, and blind spots. AI repeats those patterns because it thinks that is how language works. It does not know better.",
+          "statement": "It learned from everything we wrote, good and bad.",
+          "explanation": "AI was trained on billions of pages written by people. That includes great writing, but also stereotypes, outdated views, and plain wrong information. It does not filter any of this out. It just picks whatever pattern fits best.",
           "terms": {
-            "bias": "When AI consistently leans one way because the text it learned from leaned that way. It is a mirror of human writing, good parts and bad parts included."
+            "bias": "When AI consistently leans one way because the text it learned from leaned that way. It reflects human writing, the good parts and the bad parts."
           },
           "children": []
         }
       ]
     },
     {
-      "id": "wrapper",
-      "duration": 10,
-      "statement": "The wrapper changes everything, not the brain.",
-      "explanation": "ChatGPT, Claude, Gemini, and every AI app you use share similar brains underneath. What makes them feel different is everything built around that brain: the instructions it follows, the tools it can use, how it remembers your conversation. That outer layer is the wrapper, and it matters more than the brain itself.",
-      "terms": {
-        "wrapper": "Think of it like this: the AI brain is an engine, and the wrapper is the car built around it. Same engine can power a taxi or a race car. The experience is completely different."
-      },
+      "id": "app-matters",
+      "statement": "The app matters more than the AI.",
+      "explanation": "ChatGPT, Claude, Gemini all use similar technology underneath. What makes them feel different is the app built around it: the instructions it follows, the tools it connects to, how it handles your conversation. Two apps using the same AI model can give you completely different experiences.",
+      "terms": {},
       "children": [
         {
           "id": "prompt",
-          "statement": "How you ask changes what you get. Dramatically.",
-          "explanation": "Saying 'write me something about dogs' gets you a generic paragraph. Saying 'write a 3 sentence bedtime story about a golden retriever who learns to fly, for a 5 year old' gets you something useful. The more specific you are, the better the result. This is the single most useful skill with AI.",
-          "terms": {
-            "prompt": "Whatever you type into AI. Your question, your instructions, your examples. Think of it as a brief you give to a very fast but very literal intern."
-          },
+          "statement": "How you ask changes everything.",
+          "explanation": "\"Write something about dogs\" gets you a generic paragraph. \"Write a 3 sentence bedtime story about a golden retriever who learns to fly, for a 5 year old\" gets you something useful. The more specific your instructions, the better the result. This is the single most useful skill you can build.",
+          "terms": {},
           "children": []
         },
         {
           "id": "temperature",
-          "statement": "You can make it more creative or more predictable.",
-          "explanation": "There is a dial called temperature. Turn it down and AI plays it safe, giving you predictable and focused answers. Turn it up and it gets more creative and surprising, but also more likely to go off track. Most apps set this for you, but knowing it exists helps you understand why AI sometimes feels random.",
-          "terms": {
-            "temperature": "A setting between 0 and 1 that controls how adventurous AI is with its word choices. Low means safe and boring. High means creative and risky."
-          },
+          "statement": "You can adjust how creative it gets.",
+          "explanation": "There is a setting called temperature. Low means predictable, focused answers. High means creative, surprising answers that sometimes go off track. Most apps set this for you, but knowing it exists explains why AI sometimes feels random.",
+          "terms": {},
           "children": []
         },
         {
           "id": "plugins",
-          "statement": "Plugins let AI do things, not just say things.",
-          "explanation": "On its own, AI can only write text. But with plugins, it can search the web, look at your files, check your calendar, or run code. This is what turns a chatbot into something actually useful for real work.",
-          "terms": {
-            "plugins": "Extra abilities you connect to AI. Like apps on your phone. Each one lets AI do something new: browse the web, make images, read spreadsheets, send emails."
-          },
+          "statement": "Plugins give it real abilities.",
+          "explanation": "On its own AI can only write text. With plugins it can browse the web, read your files, check your calendar, run code. Plugins are what turn a chatbot into a useful work tool.",
+          "terms": {},
           "children": []
         }
       ]
     },
     {
-      "id": "forgets",
-      "duration": 7,
-      "statement": "AI forgets you the moment you leave.",
-      "explanation": "Every time you start a new chat, AI has no idea who you are. It does not remember your last conversation, your preferences, or that correction you made five minutes ago. It starts completely fresh every single time. Any memory you see is faked by the app, not the AI itself.",
-      "terms": {
-        "memory": "Some apps save notes about you and feed them back to AI each time. But the AI itself has zero memory. It is like talking to someone with amnesia who reads a cheat sheet about you before each conversation."
-      },
+      "id": "no-memory",
+      "statement": "Every conversation starts from scratch.",
+      "explanation": "AI does not remember you between conversations. Every new chat is a blank slate. It does not know what you discussed yesterday, what you prefer, or that correction you made five minutes ago. If an app seems to remember you, that is the app saving notes and feeding them back. The AI itself has zero memory.",
+      "terms": {},
       "children": [
         {
           "id": "context-window",
-          "statement": "There is a limit to how much it can hold in its head at once.",
-          "explanation": "AI can only pay attention to a certain amount of text at a time. Your message, its instructions, any documents you shared, and its own reply all have to fit in this space. Go over the limit and it starts forgetting the beginning of your conversation. It is like a desk that can only hold so many papers.",
-          "terms": {
-            "context window": "The total space AI has for your entire conversation. Everything has to fit here: what you said, what it said, any files you uploaded. Think of it as short term memory with a hard cap."
-          },
+          "statement": "There is a limit to how much it can hold at once.",
+          "explanation": "Your messages, its replies, any files you uploaded, its instructions, all of this has to fit in a fixed space. Go past the limit and it starts forgetting what was said at the beginning of your conversation.",
+          "terms": {},
           "children": []
         },
         {
           "id": "context-quality",
           "statement": "More information does not mean better answers.",
-          "explanation": "Dumping a 50 page document into AI does not make it smarter. It actually gets worse at finding what matters. AI pays the most attention to the beginning and end of what you give it, and tends to miss stuff in the middle. Keep it focused. Give it what it needs, nothing more.",
+          "explanation": "Pasting a 50 page document does not help. AI pays the most attention to the beginning and end of what you give it, and tends to miss things in the middle. Keep your inputs focused and relevant.",
           "terms": {},
           "children": []
         }
@@ -99,109 +104,94 @@
     },
     {
       "id": "input-output",
-      "duration": 9,
-      "statement": "Better input, better output. Always.",
-      "explanation": "This is the most important slide. The quality of what you get from AI depends entirely on what you put in. Vague question, vague answer. Specific request with context and examples, genuinely useful result. Learning to give good instructions is the one skill that makes everything else work.",
+      "statement": "Better input, better output.",
+      "explanation": "Vague question gets a vague answer. A specific request with context and examples gets a genuinely useful result. Learning to write clear instructions is the one skill that makes everything else with AI work better.",
       "terms": {},
       "children": [
         {
           "id": "examples",
-          "statement": "Show it what you want instead of explaining it.",
-          "explanation": "Instead of describing the format you want, just show AI two or three examples. It picks up patterns instantly. Show it how you want your emails to sound, how your reports should look, or what style you want. Examples beat instructions every time.",
+          "statement": "Show examples instead of explaining.",
+          "explanation": "Instead of describing the format you want, paste two or three examples. AI picks up patterns instantly. Show it how you want emails to sound, how reports should look, what style you prefer. Examples beat explanations every time.",
           "terms": {},
           "children": []
         },
         {
           "id": "draft-machine",
-          "statement": "Use it for first drafts, never for final versions.",
-          "explanation": "AI is incredibly fast at getting you a starting point. Use it that way. Let it write the first version, then edit it with your own knowledge. This way you skip the blank page problem while keeping your expertise in the result. Starting from something is always faster than starting from nothing.",
+          "statement": "Use it for first drafts, not final versions.",
+          "explanation": "AI is fast at getting you a starting point. Let it write the first version, then edit with your own knowledge. You skip the blank page problem and keep your expertise in the result.",
           "terms": {},
           "children": []
         },
         {
           "id": "judgment",
-          "statement": "You are the expert. AI is just fast.",
-          "explanation": "AI does not know your audience, your context, your goals, or your taste. You do. That is what makes the difference between useless AI output and great work. AI brings speed, you bring judgment. Neither works well alone.",
+          "statement": "You bring the judgment.",
+          "explanation": "AI does not know your audience, your context, or your standards. You do. AI brings speed. You bring the knowledge that turns generic output into good work. Neither is useful alone.",
           "terms": {},
           "children": []
         }
       ]
     },
     {
-      "id": "acts-vs-talks",
-      "duration": 10,
-      "statement": "AI that acts is not the same as AI that talks.",
-      "explanation": "Most AI just writes text. But a new kind of AI can actually do things: book appointments, fill out forms, write and run code, search your files. The difference matters because talking AI gives you words, acting AI gives you results. And acting AI can also make real mistakes with real consequences.",
+      "id": "ai-actions",
+      "statement": "Some AI does things, not just writes.",
+      "explanation": "Most AI just generates text. But newer AI can actually take actions: book meetings, fill out forms, write and run code, search through your files. This changes things because actions have real consequences.",
       "terms": {},
       "children": [
         {
           "id": "agents",
-          "statement": "Agents do the work. Assistants wait for your instructions.",
-          "explanation": "An assistant answers one question at a time and waits for the next. An agent takes a goal and figures out the steps on its own. You say 'plan my trip to Tokyo' and the agent searches flights, checks hotels, looks at your calendar, and comes back with options. Powerful, but you need to check its work.",
-          "terms": {
-            "agent": "AI that can take multiple steps on its own to reach a goal. It decides what to do, does it, checks the result, and adjusts. Like a very eager intern who does not always ask before acting."
-          },
+          "statement": "Agents figure out the steps on their own.",
+          "explanation": "An assistant answers one question and waits. An agent takes a goal and works through the steps itself. You say \"plan my trip to Tokyo\" and it searches flights, checks hotels, looks at your calendar, and comes back with options. Useful, but always review what it did.",
+          "terms": {},
           "children": []
         },
         {
           "id": "vibe-coding",
-          "statement": "You can describe software and AI will build it.",
-          "explanation": "People are building apps by just describing what they want in plain language. AI writes the code. It works surprisingly well for simple things. But when something breaks, you need to understand enough to fix it or at least explain the problem. You cannot maintain what you cannot read.",
-          "terms": {
-            "vibe coding": "Describing what you want a program to do in everyday language and letting AI write all the code. Great for prototypes and simple tools. Gets tricky when things need debugging."
-          },
+          "statement": "You can describe what you want and AI builds it.",
+          "explanation": "People are building apps by describing what they want in plain words. AI writes the code. This works surprisingly well for simple things. But when something breaks, someone still needs to understand the code to fix it.",
+          "terms": {},
           "children": []
         }
       ]
     },
     {
       "id": "multimodal",
-      "duration": 8,
-      "statement": "AI can now see, hear, and reason.",
-      "explanation": "AI is not just text anymore. You can show it a photo and ask what is in it. You can give it audio and get a transcript. You can ask it to solve a math problem step by step. These capabilities are new, improving fast, and changing what is possible.",
+      "statement": "It works with more than just text.",
+      "explanation": "AI can look at photos and describe what is in them. It can listen to audio and create transcripts. It can work through math problems step by step. These abilities are new and improving fast.",
       "terms": {},
       "children": [
         {
           "id": "seeing-hearing",
           "statement": "Show it a photo, get an answer.",
-          "explanation": "You can take a photo of a plant and ask AI what it is. Snap a picture of an error message on your screen and ask for help. Photograph a menu in a foreign language and get it translated. This is one of the most practical things AI can do right now and most people have not tried it yet.",
+          "explanation": "Take a photo of a plant and ask what species it is. Screenshot an error on your screen and ask for help. Photograph a menu in another language and get it translated. This is one of the most practical things AI can do and most people have not tried it.",
           "terms": {},
           "children": []
         },
         {
           "id": "reasoning",
-          "statement": "Some AI models think before they answer.",
-          "explanation": "Newer AI models can slow down and work through a problem step by step before giving you an answer. They are better at math, logic, and anything that needs careful thinking. The tradeoff is they take longer and cost more. But for hard problems, the extra thinking is worth it.",
+          "statement": "Some models reason before they respond.",
+          "explanation": "Newer models can slow down and think through a problem before answering. They are better at math, logic, and anything that needs careful reasoning. They take longer and cost more, but for hard problems the extra thinking is worth it.",
           "terms": {},
           "children": []
         },
         {
           "id": "your-data",
-          "statement": "You can give AI your own documents to work with.",
-          "explanation": "Instead of relying on what AI already knows, you can upload your own files, reports, or notes and ask questions about them. This is how AI becomes useful for your specific work. It reads your stuff and answers based on that, not on random internet text.",
+          "statement": "Feed it your own files.",
+          "explanation": "You can upload your own documents, reports, or notes and ask questions about them. This is how AI stops giving generic answers and starts being useful for your specific work.",
           "terms": {},
           "children": []
         }
       ]
     },
     {
-      "id": "pilot",
-      "duration": 7,
-      "statement": "You are the pilot. Always.",
-      "explanation": "AI is a tool. A powerful one, but still a tool. You are responsible for what you publish, send, submit, or build with it. Do not blame AI for a wrong answer you did not check. Do not trust it with decisions you would not trust a stranger with. Stay in the driver seat.",
+      "id": "verify",
+      "statement": "Check anything that matters.",
+      "explanation": "AI is fast but not reliable. Read that email before you send it. Verify that number before you use it. Review that report before you submit it. Five minutes of checking can save you from a very embarrassing mistake.",
       "terms": {},
       "children": [
         {
-          "id": "check-work",
-          "statement": "If it matters, verify it.",
-          "explanation": "Before you send that email AI wrote, read it. Before you use that number AI gave you, check it. Before you submit that report, review it. AI is a fast first draft, not a reliable fact checker. The five minutes you spend checking can save you from a very embarrassing mistake.",
-          "terms": {},
-          "children": []
-        },
-        {
           "id": "hype",
           "statement": "Most of what you hear about AI is exaggerated.",
-          "explanation": "The gap between AI demos and real life is huge. That impressive video might have taken 50 tries. That amazing tool might only work on one specific task. Be curious, try things, but do not believe every headline. The best way to understand AI is to use it yourself and see where it actually helps.",
+          "explanation": "That impressive demo might have taken 50 tries. That amazing tool might only work for one specific task. Be curious and try things, but do not trust headlines. The best way to understand AI is to use it yourself and see where it actually helps.",
           "terms": {},
           "children": []
         }
