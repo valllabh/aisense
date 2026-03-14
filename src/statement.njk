@@ -1,0 +1,78 @@
+---
+layout: base.njk
+pagination:
+  data: aisense.statements
+  size: 1
+  alias: item
+permalink: "/{{ item.id }}/"
+eleventyComputed:
+  title: "{{ item.statement }} | AI Sense"
+---
+
+<a href="{{ '/' | url }}" class="back-link">&larr; All gut feelings</a>
+
+{% set idx = 0 %}
+{% for s in aisense.statements %}
+  {% if s.id == item.id %}{% set idx = loop.index %}{% endif %}
+{% endfor %}
+
+<div class="post-header">
+  <span class="post-label">Gut feeling {{ idx }} of 7</span>
+  <h1 class="post-title">{{ item.statement }}</h1>
+</div>
+
+<div class="post-content">
+  <p>{{ item.explanation }}</p>
+</div>
+
+{% if item.terms and item.terms | length %}
+<div class="section" style="margin-top: var(--spacing-9);">
+  <div class="section-title">Key Terms</div>
+  <div class="terms-grid">
+    {% for word, def in item.terms %}
+    <div class="term-card">
+      <p class="term-word">{{ word }}</p>
+      <p class="term-def">{{ def }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if item.children and item.children | length %}
+<div class="section" style="margin-top: var(--spacing-9);">
+  <div class="section-title">Go Deeper</div>
+  <div class="section-list">
+    {% for child in item.children %}
+    <article class="card">
+      <a class="card-link" href="{{ ('/' + child.id + '/') | url }}" aria-label="{{ child.statement }}"></a>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">{{ child.statement }}</h3>
+        </div>
+        <p class="card-excerpt">{{ child.explanation }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<nav class="post-nav" aria-label="Statement navigation">
+  {% set prevIdx = idx - 2 %}
+  {% set nextIdx = idx %}
+  {% if prevIdx >= 0 %}
+  <a href="{{ ('/' + aisense.statements[prevIdx].id + '/') | url }}">
+    &larr; {{ aisense.statements[prevIdx].statement | truncate(40) }}
+  </a>
+  {% else %}
+  <span></span>
+  {% endif %}
+  {% if nextIdx < aisense.statements | length %}
+  <a href="{{ ('/' + aisense.statements[nextIdx].id + '/') | url }}" style="text-align: right;">
+    {{ aisense.statements[nextIdx].statement | truncate(40) }} &rarr;
+  </a>
+  {% else %}
+  <span></span>
+  {% endif %}
+</nav>

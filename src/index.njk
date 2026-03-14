@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: AI Sense
+---
+
+<div class="section-hero">
+  <div class="section-hero-content">
+    <h1>AI Sense</h1>
+    <p>7 gut feelings you need before you touch any AI tool</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Gut Feelings</div>
+
+  <div class="section-list">
+    {% for item in aisense.statements %}
+    <article class="card">
+      <a class="card-link" href="{{ ('/' + item.id + '/') | url }}" aria-label="{{ item.statement }}"></a>
+      <div class="card-content">
+        <div class="card-header">
+          <span class="card-number">{{ loop.index }}</span>
+          <h2 class="card-title">{{ item.statement }}</h2>
+        </div>
+        <p class="card-excerpt">{{ item.explanation }}</p>
+        <div class="card-footer">
+          <span>{{ item.children | length }} subtopics</span>
+          {% if item.terms | length %}
+          <span>&middot;</span>
+          <span>{{ item.terms | length }} terms</span>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
