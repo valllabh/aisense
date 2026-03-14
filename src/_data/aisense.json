@@ -32,6 +32,28 @@
       "terms": {},
       "children": [
         {
+          "id": "what-is-a-prompt",
+          "statement": "A prompt is just the words you give it.",
+          "explanation": "Everything you type into ChatGPT, Claude, or any AI chat is called a prompt. It is not a magic spell or a programming language. It is plain text. But because AI predicts its next word based on all the words before it, your prompt is literally the starting point for everything it produces. A vague prompt gives vague results. A specific prompt gives specific results.\n\nThink of it like giving directions. \"Go to the store\" might get you anywhere. \"Drive to the Trader Joe's on Oak Street and pick up eggs and milk\" gets you exactly what you need. Same idea with AI.",
+          "terms": {
+            "prompt": "The text you type into an AI chat. It is the input that shapes the output. Everything AI writes is a response to your prompt."
+          },
+          "children": []
+        },
+        {
+          "id": "prompt-types",
+          "statement": "Different prompts get different results.",
+          "explanation": "Not all prompts work the same way. Here are the most common types you will run into.\n\nDirect prompt: You ask a question or give a simple instruction. \"What is the capital of France?\" or \"Write a thank you email.\" Quick and easy, but the result is generic.\n\nRole prompt: You tell AI who it should be before asking. \"You are a nutritionist. What should I eat after a workout?\" This changes the perspective of the answer.\n\nTask prompt: You give detailed instructions with constraints. \"Write a 3 sentence summary of this article for a newsletter audience, in a casual tone.\" The more specific you are, the closer the result matches what you need.\n\nExample prompt: Instead of explaining what you want, you show it. Paste two or three examples of the format, tone, or style you need, then ask for more. AI picks up patterns instantly.\n\nSystem prompt: This one you do not write. The app does. When you open ChatGPT, there are hidden instructions already loaded before you type anything. These instructions shape how the AI behaves, what tone it uses, and what it refuses to do. Every AI app has different system prompts, which is why the same question gets different answers in different apps.",
+          "terms": {
+            "direct prompt": "A simple question or instruction with no extra context. Fast but generic.",
+            "role prompt": "Telling AI to act as a specific person or expert before asking your question. Changes the perspective of the answer.",
+            "task prompt": "A detailed instruction with specific constraints like length, tone, audience, or format.",
+            "example prompt": "Showing AI two or three examples of what you want instead of describing it. Also called few shot prompting.",
+            "system prompt": "Hidden instructions loaded by the app before you type anything. You do not see them, but they shape every response."
+          },
+          "children": []
+        },
+        {
           "id": "hallucination",
           "statement": "It does not know when it is wrong.",
           "explanation": "Because AI is just predicting the next word, it has no idea if what it wrote is true or false. A correct fact and a made up fact look exactly the same to it. It will cite a book that does not exist with the same confidence as a real one. Always verify anything that matters.",
