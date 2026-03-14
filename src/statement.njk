@@ -40,7 +40,7 @@ eleventyComputed:
     <div class="experiment-card">
       <span class="experiment-label">{{ p.label }}</span>
       <p class="experiment-text">{{ p.text }}</p>
-      <a href="{{ p.link }}" target="_blank" rel="noopener" class="button experiment-button">Try in ChatGPT &rarr;</a>
+      <a href="{{ p.link }}" target="_blank" rel="noopener" class="button experiment-button">{{ p.buttonText or "Try in ChatGPT" }} &rarr;</a>
     </div>
     {% endfor %}
   </div>
