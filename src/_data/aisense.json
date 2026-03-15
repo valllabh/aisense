@@ -156,11 +156,11 @@
     {
       "id": "hallucination",
       "statement": "AI does not know when it is wrong.",
-      "explanation": "AI does not fact check itself. AI predicts words that sound right, not words that are right. A true statement and a made up statement look exactly the same to AI. AI will cite a book that does not exist, invent a statistic, or describe an event that never happened, all with the same confidence.\n\nThis is not a bug. This is how word prediction works. AI has no connection to reality. AI has never been to a hospital, read a real newspaper, or verified a phone number. AI learned patterns from text and reproduces those patterns. Sometimes the pattern matches reality. Sometimes it does not. AI cannot tell the difference.\n\nOn its own, AI cannot fact check anything. AI needs external tools for that. A search engine is one example of a tool. When AI searches the web before answering, AI is pulling real information instead of guessing. Without tools, AI is just predicting. With tools, AI can verify.",
+      "explanation": "AI does not fact check itself. For AI, facts and false information are all the same. They are just words. AI is a statistical machine. AI picks the most likely next word based on patterns, not based on what is true. AI does not know right from wrong because AI has no concept of truth. AI just has patterns.\n\nThis is where the harness matters. Good harnesses add a layer that checks facts using external sources. Need a cricket score? The harness can connect AI to a live scores API. Need a stock price? The harness can check the market. Need to verify a date? The harness can search the web. AI does not know these facts on its own. The harness gives AI access to real data.\n\nIf the harness you are using does not have these tools to fact check, do not trust the output as factual. AI without fact checking tools is just predicting what sounds right. AI with the right tools can actually verify before responding.",
       "terms": {
         "hallucination": "When AI confidently writes something that is completely made up. AI is not lying on purpose. AI just cannot tell the difference between real and fake.",
-        "grounding": "Connecting AI to external sources of truth like web search, databases, or documents so responses are based on real data instead of just predictions.",
-        "tool use": "When AI calls external tools like web search, calculators, or APIs to get real information instead of relying on predictions alone."
+        "grounding": "When the harness connects AI to real data sources before responding so the output is based on facts, not just predictions.",
+        "tool use": "When AI calls external tools like web search, live APIs, or databases to get real information instead of guessing."
       },
       "children": [
         {
