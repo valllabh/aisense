@@ -9,22 +9,18 @@
       "imageAlt": "Diagram showing how AI reads your context and predicts the most likely next word from many possibilities",
       "explanation": "AI does not understand your question and then write a reply. AI predicts one word at a time. AI looks at all the words that came before, and picks the most likely next word. Then AI looks at everything again, including the word it just picked, and predicts the next one. This keeps going until the full response is built.\n\nThis means every word AI has seen so far shapes what comes next. The previous words are the context. Change the context, change the output.\n\nThis is why what you type matters so much. Your words are the context AI uses to predict everything that follows.",
       "experiment": {
-        "intro": "First try with your own brain. Read each sentence and fill in the blank. Notice how the same word \"bat\" changes meaning based on the words before it:",
+        "intro": "First try with your own brain. Read each sentence and fill in the blank:",
         "prompts": [
           {
             "label": "Try with your brain",
-            "text": "The cricket player picked up his ___ (bat)"
+            "text": "She checked the time on her ___"
           },
           {
             "label": "Try with your brain",
-            "text": "The vampire turned into a ___ (bat)"
-          },
-          {
-            "label": "Try with your brain",
-            "text": "She grabbed a baseball ___ (bat)"
+            "text": "She checked the pressure on her ___"
           }
         ],
-        "result": "Same word \"bat\" but your brain pictured three completely different things. A cricket bat, an animal, and a baseball bat. You did not think about it. Your brain just picked the most likely meaning based on the words that came before. This is exactly what AI does. The words before shape the words after. AI learned from billions of sentences and predicts the next word the same way your brain does.",
+        "result": "Same sentence, one word changed. Your brain predicted \"watch\" for the first and \"tires\" for the second. You did not think about it. The word before the blank changed what your brain predicted. This is exactly how AI works. AI reads the words before and predicts what comes next. Change one word and the prediction changes completely.",
         "followup": {
           "intro": "Now try the same idea with AI:",
           "prompts": [
