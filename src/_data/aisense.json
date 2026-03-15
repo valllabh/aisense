@@ -9,22 +9,22 @@
       "imageAlt": "Diagram showing how AI reads your context and predicts the most likely next word from many possibilities",
       "explanation": "AI does not understand your question and then write a reply. AI predicts one word at a time. AI looks at all the words that came before, and picks the most likely next word. Then AI looks at everything again, including the word it just picked, and predicts the next one. This keeps going until the full response is built.\n\nThis means every word AI has seen so far shapes what comes next. The previous words are the context. Change the context, change the output.\n\nThis is why what you type matters so much. Your words are the context AI uses to predict everything that follows.",
       "experiment": {
-        "intro": "First try with your own brain. Read each sentence below and notice which word your brain fills in automatically:",
+        "intro": "First try with your own brain. Read each sentence and fill in the blank. Notice how the same word \"bat\" changes meaning based on the words before it:",
         "prompts": [
           {
             "label": "Try with your brain",
-            "text": "The sun rises in the ___"
+            "text": "The cricket player picked up his ___ (bat)"
           },
           {
             "label": "Try with your brain",
-            "text": "She went to the hospital because she was ___"
+            "text": "The vampire turned into a ___ (bat)"
           },
           {
             "label": "Try with your brain",
-            "text": "The fisherman sat on the bank of the ___"
+            "text": "She grabbed a baseball ___ (bat)"
           }
         ],
-        "result": "Your brain predicted \"east\", \"sick\", and \"river\" almost instantly. You did not think about it. Your brain just picked the most likely next word based on every sentence you have ever read or heard. This is exactly what AI does. AI learned from billions of sentences and predicts the next word the same way.\n\nNow try with AI. Notice how changing the words before \"bank\" changes what AI writes, just like it changed what your brain predicted.",
+        "result": "Same word \"bat\" but your brain pictured three completely different things. A cricket bat, an animal, and a baseball bat. You did not think about it. Your brain just picked the most likely meaning based on the words that came before. This is exactly what AI does. The words before shape the words after. AI learned from billions of sentences and predicts the next word the same way your brain does.",
         "followup": {
           "intro": "Now try the same idea with AI:",
           "prompts": [
