@@ -3,14 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ description or 'AI Sense: Common sense for working with AI' }}" />
+    {% set pageTitle = title or 'AI Sense' %}
+    {% set pageDesc = description or 'AI Sense: The basic intuitions you need before using any AI tool. Learn how AI actually works in plain language.' %}
+    {% set siteUrl = 'https://valllabh.github.io/aisense' %}
+    {% set pageUrl = siteUrl + page.url %}
+
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ pageDesc }}" />
+    <link rel="canonical" href="{{ pageUrl }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageDesc }}" />
+    <meta property="og:url" content="{{ pageUrl }}" />
+    <meta property="og:site_name" content="AI Sense" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
+    <meta name="twitter:description" content="{{ pageDesc }}" />
+
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | url }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Noto+Serif:wght@400;700&display=swap" />
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <title>{{ title or 'AI Sense' }}</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     <script>
       (function() {
         var t = localStorage.getItem('theme');

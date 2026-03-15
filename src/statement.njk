@@ -7,7 +7,30 @@ pagination:
 permalink: "/{{ item.id }}/"
 eleventyComputed:
   title: "{{ item.statement }} | AI Sense"
+  description: "{{ item.explanation | truncate(155) }}"
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ item.statement }}",
+  "description": "{{ item.explanation | truncate(155) | replace('"', '\\"') }}",
+  "author": { "@type": "Organization", "name": "AI Sense" },
+  "publisher": { "@type": "Organization", "name": "AI Sense" },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://valllabh.github.io/aisense/{{ item.id }}/"
+  }
+  {% if item.terms and item.terms | length %},
+  "about": [
+    {% for word, def in item.terms %}
+    { "@type": "DefinedTerm", "name": "{{ word }}", "description": "{{ def | replace('"', '\\"') }}" }{{ "," if not loop.last }}
+    {% endfor %}
+  ]
+  {% endif %}
+}
+</script>
 
 <a href="{{ '/' | url }}" class="back-link">&larr; All senses</a>
 

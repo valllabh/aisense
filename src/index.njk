@@ -1,7 +1,37 @@
 ---
 layout: base.njk
 title: AI Sense
+description: "AI Sense: The basic intuitions you need before using any AI tool. Learn how AI predicts words, why AI hallucinates, and what makes AI apps different."
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI Sense",
+  "url": "https://valllabh.github.io/aisense/",
+  "description": "Common sense for working with AI. The basic intuitions you need before using any AI tool."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in aisense.statements %}
+    {
+      "@type": "Question",
+      "name": "{{ item.statement }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.explanation | replace('"', '\\"') | replace('\n', ' ') }}"
+      }
+    }{{ "," if not loop.last }}
+    {% endfor %}
+  ]
+}
+</script>
 
 <div class="section-hero">
   <div class="dictionary-entry">
