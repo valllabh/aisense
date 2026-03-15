@@ -40,6 +40,27 @@ eleventyComputed:
     <div class="experiment-card">
       <span class="experiment-label">{{ p.label }}</span>
       <p class="experiment-text">{{ p.text }}</p>
+      {% if p.link %}
+      <div class="experiment-actions">
+        <button class="button experiment-button copy-button" onclick="navigator.clipboard.writeText('{{ p.text | replace("'", "\\'") }}');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Prompt',1500)">Copy Prompt</button>
+        <a href="{{ p.link }}" target="_blank" rel="noopener" class="button experiment-button">{{ p.buttonText or "Try in ChatGPT" }} &rarr;</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% if item.experiment.result %}
+  <div class="experiment-result">
+    {{ item.experiment.result | replace("\n\n", "</p><p>") | replace("\n", " ") | safe }}
+  </div>
+  {% endif %}
+  {% if item.experiment.followup %}
+  <p style="color: var(--color-foreground); font-size: var(--font-small); margin-top: var(--spacing-7); margin-bottom: var(--spacing-5);">{{ item.experiment.followup.intro }}</p>
+  <div class="experiment-grid">
+    {% for p in item.experiment.followup.prompts %}
+    <div class="experiment-card">
+      <span class="experiment-label">{{ p.label }}</span>
+      <p class="experiment-text">{{ p.text }}</p>
       <div class="experiment-actions">
         <button class="button experiment-button copy-button" onclick="navigator.clipboard.writeText('{{ p.text | replace("'", "\\'") }}');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Prompt',1500)">Copy Prompt</button>
         {% if p.link %}
@@ -49,10 +70,11 @@ eleventyComputed:
     </div>
     {% endfor %}
   </div>
-  {% if item.experiment.result %}
+  {% if item.experiment.followup.result %}
   <div class="experiment-result">
-    {{ item.experiment.result | replace("\n\n", "</p><p>") | replace("\n", " ") | safe }}
+    {{ item.experiment.followup.result | replace("\n\n", "</p><p>") | replace("\n", " ") | safe }}
   </div>
+  {% endif %}
   {% endif %}
 </div>
 {% endif %}

@@ -9,25 +9,43 @@
       "imageAlt": "Diagram showing how AI reads your context and predicts the most likely next word from many possibilities",
       "explanation": "AI does not understand your question and then write a reply. AI predicts one word at a time. AI looks at all the words that came before, and picks the most likely next word. Then AI looks at everything again, including the word it just picked, and predicts the next one. This keeps going until the full response is built.\n\nThis means every word AI has seen so far shapes what comes next. The previous words are the context. Change the context, change the output.\n\nThis is why what you type matters so much. Your words are the context AI uses to predict everything that follows.",
       "experiment": {
-        "intro": "Open ChatGPT and try these three prompts in separate conversations:",
+        "intro": "First try with your own brain. Read each sentence below and notice which word your brain fills in automatically:",
         "prompts": [
           {
-            "label": "Prompt A",
-            "text": "Write a paragraph about a bank.",
-            "link": "https://chatgpt.com/?temporary-chat=true&prompt=Write%20a%20paragraph%20about%20a%20bank."
+            "label": "Try with your brain",
+            "text": "The sun rises in the ___"
           },
           {
-            "label": "Prompt B",
-            "text": "I am a fisherman. Write a paragraph about a bank.",
-            "link": "https://chatgpt.com/?temporary-chat=true&prompt=I%20am%20a%20fisherman.%20Write%20a%20paragraph%20about%20a%20bank."
+            "label": "Try with your brain",
+            "text": "She went to the hospital because she was ___"
           },
           {
-            "label": "Prompt C",
-            "text": "I am a financial advisor. Write a paragraph about a bank.",
-            "link": "https://chatgpt.com/?temporary-chat=true&prompt=I%20am%20a%20financial%20advisor.%20Write%20a%20paragraph%20about%20a%20bank."
+            "label": "Try with your brain",
+            "text": "The fisherman sat on the bank of the ___"
           }
         ],
-        "result": "Notice how the same word \"bank\" produces completely different results. In prompt A, AI could go either way. In prompt B, it writes about a river bank. In prompt C, it writes about a financial bank.\n\nYou did not change the question. You changed the context. And that changed everything."
+        "result": "Your brain predicted \"east\", \"sick\", and \"river\" almost instantly. You did not think about it. Your brain just picked the most likely next word based on every sentence you have ever read or heard. This is exactly what AI does. AI learned from billions of sentences and predicts the next word the same way.\n\nNow try with AI. Notice how changing the words before \"bank\" changes what AI writes, just like it changed what your brain predicted.",
+        "followup": {
+          "intro": "Now try the same idea with AI:",
+          "prompts": [
+            {
+              "label": "Prompt A",
+              "text": "Write a paragraph about a bank.",
+              "link": "https://chatgpt.com/?temporary-chat=true&prompt=Write%20a%20paragraph%20about%20a%20bank."
+            },
+            {
+              "label": "Prompt B",
+              "text": "I am a fisherman. Write a paragraph about a bank.",
+              "link": "https://chatgpt.com/?temporary-chat=true&prompt=I%20am%20a%20fisherman.%20Write%20a%20paragraph%20about%20a%20bank."
+            },
+            {
+              "label": "Prompt C",
+              "text": "I am a financial advisor. Write a paragraph about a bank.",
+              "link": "https://chatgpt.com/?temporary-chat=true&prompt=I%20am%20a%20financial%20advisor.%20Write%20a%20paragraph%20about%20a%20bank."
+            }
+          ],
+          "result": "Same word \"bank\", completely different results. In prompt A, AI could go either way. In prompt B, AI writes about a river bank. In prompt C, AI writes about a financial bank. You did not change the question. You changed the context. And that changed everything. Just like your brain did with the sentences above."
+        }
       },
       "terms": {},
       "children": [
