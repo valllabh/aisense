@@ -85,7 +85,7 @@
     },
     {
       "id": "context-structure",
-      "statement": "You are not the only one talking to AI.",
+      "statement": "You are not the only one instructing AI.",
       "explanation": "When you type a message, you see only your words. But AI sees much more. Your message is just one part of a larger context that gets sent every time. The app assembles this context behind the scenes before AI reads a single word from you.\n\nAt the top sits the system prompt, a set of hidden instructions written by the app developer. Below that is your full conversation history, every message you sent and every response AI gave, replayed from the beginning. Your latest message goes at the very bottom. AI reads all of this, top to bottom, every single time you hit send.",
       "experiment": {
         "intro": "Try this prompt in ChatGPT and Gemini to reveal the hidden instructions AI was given before you typed anything:",
