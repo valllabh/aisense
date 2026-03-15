@@ -80,7 +80,7 @@
             "buttonText": "Try in Gemini"
           }
         ],
-        "result": "You will see instructions you never wrote. Rules about tone, behavior, safety, what to refuse. These were loaded by the app before you said anything. This is the system prompt. It is always there, shaping every answer, and you normally never see it.\n\nDifferent apps have different system prompts. That is why the same question gets different answers in ChatGPT versus Gemini versus Claude. Same AI technology, different hidden instructions."
+        "result": "ChatGPT and similar apps are built to protect their internal instructions. They will refuse to reveal the system prompt or give you a vague summary instead. This is because these apps have a strong harness around the AI, controlling what AI can and cannot share.\n\nt3.chat and similar open tools do not have these restrictions. They let AI show you exactly what instructions were loaded. Same AI technology, different harness. One locks things down, the other lets you see everything.\n\nThis difference in harness is what makes every AI app feel different, even when the AI underneath is the same."
       },
       "terms": {
         "context": "Everything AI can see when it generates a response. Includes the system prompt, conversation history, and your latest message.",
@@ -111,6 +111,39 @@
           "terms": {
             "context window": "The fixed amount of text AI can see at once. When it fills up, older messages get dropped silently."
           },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "harness",
+      "statement": "The app around AI matters more than the AI itself.",
+      "explanation": "ChatGPT, Claude, Gemini, t3.chat all use similar AI technology underneath. What makes them feel completely different is the harness built around that AI. The harness is everything the app adds on top: the system prompt, the safety filters, the tools AI can access, how conversations are stored, and what AI is allowed to say or do.\n\nA strict harness locks AI down. AI cannot reveal its instructions, refuses certain topics, and behaves within tight boundaries. A loose harness lets AI do more, show more, and sometimes expose things the developer did not intend.\n\nWhen you pick an AI app, you are not just picking an AI model. You are picking a harness. The same AI model inside two different harnesses will behave like two completely different products.",
+      "terms": {
+        "harness": "Everything an app wraps around the AI model. Includes the system prompt, safety filters, available tools, memory features, and rules about what AI can and cannot do.",
+        "safety filters": "Rules built into the harness that prevent AI from generating harmful, inappropriate, or restricted content.",
+        "guardrails": "Another word for safety filters. Boundaries set by the app to keep AI responses within acceptable limits."
+      },
+      "children": [
+        {
+          "id": "same-brain-different-personality",
+          "statement": "Same brain, different personality.",
+          "explanation": "ChatGPT feels chatty and helpful. Claude feels careful and thoughtful. Gemini feels integrated with Google. These are not different levels of intelligence. These are different harnesses shaping the same kind of AI.\n\nThe system prompt tells AI how to talk. The safety filters decide what topics to avoid. The available tools determine what AI can actually do. Change any of these and the same AI model feels like a completely different product.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "custom-harness",
+          "statement": "You can build your own harness.",
+          "explanation": "ChatGPT lets you set custom instructions. Claude lets you create projects with specific context. Many apps let you build custom GPTs or bots with their own system prompts and tools.\n\nWhen you do this, you are building your own harness. You are deciding what AI knows about you, what rules AI follows, and what tools AI can use. This is one of the most powerful things you can do with AI and most people never try it.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "harness-trust",
+          "statement": "The harness decides what you can trust.",
+          "explanation": "An AI app with web search, fact checking tools, and strict citation requirements will give you more reliable answers than a bare AI chatbot with no tools at all. The difference is not the AI. The difference is the harness.\n\nBefore you trust an AI response, think about what harness produced it. Does this app have access to real data? Does AI cite sources? Are there safety checks? A strong harness makes AI more useful. A weak harness makes AI more dangerous.",
+          "terms": {},
           "children": []
         }
       ]
