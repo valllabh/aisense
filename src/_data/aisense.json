@@ -118,34 +118,20 @@
     {
       "id": "hallucination",
       "statement": "It does not know when it is wrong.",
-      "explanation": "AI does not fact check itself. It predicts words that sound right, not words that are right. A true statement and a made up statement look exactly the same to it. It will cite a book that does not exist, invent a statistic, or describe an event that never happened, all with the same confidence.\n\nThis is not a bug. It is how word prediction works. AI has no connection to reality. It has never been to a hospital, read a real newspaper, or verified a phone number. It learned patterns from text and it reproduces those patterns. Sometimes the pattern matches reality. Sometimes it does not. AI cannot tell the difference.",
-      "experiment": {
-        "intro": "Ask AI to recommend books by a specific author and then verify the results:",
-        "prompts": [
-          {
-            "label": "Try in ChatGPT",
-            "text": "List 5 books written by Brene Brown with a one sentence summary of each.",
-            "link": "https://chatgpt.com/?temporary-chat=true&prompt=List%205%20books%20written%20by%20Brene%20Brown%20with%20a%20one%20sentence%20summary%20of%20each."
-          },
-          {
-            "label": "Try in Gemini",
-            "text": "List 5 books written by Brene Brown with a one sentence summary of each.",
-            "link": "https://gemini.google.com/app",
-            "buttonText": "Try in Gemini"
-          }
-        ],
-        "result": "Now search for each book title online. Some will be real. Some might not exist at all, or the summary will describe a completely different book. AI did not check. It just predicted what titles and summaries would sound right next to the author's name. This is called hallucination and it happens constantly."
-      },
+      "explanation": "AI does not fact check itself. It predicts words that sound right, not words that are right. A true statement and a made up statement look exactly the same to it. It will cite a book that does not exist, invent a statistic, or describe an event that never happened, all with the same confidence.\n\nThis is not a bug. It is how word prediction works. AI has no connection to reality. It has never been to a hospital, read a real newspaper, or verified a phone number. It learned patterns from text and it reproduces those patterns. Sometimes the pattern matches reality. Sometimes it does not. AI cannot tell the difference.\n\nThis is why modern AI apps connect to external tools. When ChatGPT searches the web before answering, or when an AI reads a live database before generating a report, it is using tools to ground its predictions in real information. Without these tools, AI is just guessing what sounds right. With them, it can check facts, pull real data, and verify its own output. The AI itself did not get smarter. It just got access to sources of truth outside its own predictions.",
       "terms": {
         "hallucination": "When AI confidently writes something that is completely made up. It is not lying on purpose. It just cannot tell the difference between real and fake.",
-        "confabulation": "Another word for hallucination. AI fills gaps with plausible sounding content, like a person who makes up details to complete a story they half remember."
+        "grounding": "Connecting AI to external sources of truth like web search, databases, or documents so its responses are based on real data instead of just predictions.",
+        "tool use": "When AI calls external tools like web search, calculators, or APIs to get real information instead of relying on its own predictions."
       },
       "children": [
         {
-          "id": "verify-everything",
-          "statement": "Always verify anything that matters.",
-          "explanation": "If you are going to send that email, check the facts first. If you are going to use that number in a report, verify it. If AI gave you a name, a date, a quote, or a reference, look it up before you trust it.\n\nAI is great for drafts, brainstorming, and getting started. It is terrible as a source of truth. Treat its output the way you would treat advice from a confident stranger. It might be right. It might be completely wrong. You cannot tell without checking.",
-          "terms": {},
+          "id": "tools-ground-ai",
+          "statement": "Tools give it a connection to reality.",
+          "explanation": "On its own, AI can only predict text. It cannot look anything up, check a fact, or access current information. But when an app connects it to tools like web search, file readers, calculators, or databases, AI can pull in real data before generating a response.\n\nThis is called grounding. Instead of guessing what the weather is, it checks a weather API. Instead of making up a stock price, it looks it up. The AI is still predicting words, but now some of those predictions are informed by actual facts. The more tools an AI app has, the more reliable its output tends to be.",
+          "terms": {
+            "grounding": "Giving AI access to real information sources so its predictions are based on facts, not just patterns from training data."
+          },
           "children": []
         },
         {
