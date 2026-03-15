@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | url }}" />
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <title>{{ title or 'AI Sense' }}</title>
     <script>
       (function() {
@@ -20,10 +21,10 @@
       <div class="site-header-inner">
         <a href="{{ '/' | url }}" class="site-logo">AI Sense</a>
         <div style="display:flex;align-items:center;gap:var(--spacing-3);">
-        <a href="{{ '/graph/' | url }}" class="theme-toggle" aria-label="Knowledge graph" style="text-decoration:none;font-size:0.8rem;">&#9737;</a>
+        <a href="{{ '/graph/' | url }}" class="theme-toggle" aria-label="Knowledge graph" style="text-decoration:none;"><i class="fa-solid fa-diagram-project"></i></a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span id="theme-icon-light" style="display:none;">&#9790;</span>
-          <span id="theme-icon-dark">&#9728;</span>
+          <span id="theme-icon-light" style="display:none;"><i class="fa-solid fa-sun"></i></span>
+          <span id="theme-icon-dark"><i class="fa-solid fa-moon"></i></span>
         </button>
         </div>
       </div>
