@@ -5,19 +5,19 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://valllabh.github.io/aisense/</loc>
+    <loc>https://vallabh.me/aisense/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   {%- for item in aisense.statements %}
   <url>
-    <loc>https://valllabh.github.io/aisense/{{ item.id }}/</loc>
+    <loc>https://vallabh.me/aisense/{{ item.id }}/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   {%- endfor %}
   <url>
-    <loc>https://valllabh.github.io/aisense/graph/</loc>
+    <loc>https://vallabh.me/aisense/graph/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
