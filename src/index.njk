@@ -28,13 +28,6 @@ title: AI Sense
           <h2 class="card-title">{{ item.statement }}</h2>
         </div>
         <p class="card-excerpt">{{ item.explanation }}</p>
-        <div class="card-footer">
-          <span>{{ item.children | length }} subtopics</span>
-          {% if item.terms | length %}
-          <span>&middot;</span>
-          <span>{{ item.terms | length }} terms</span>
-          {% endif %}
-        </div>
       </div>
     </article>
     {% endfor %}
