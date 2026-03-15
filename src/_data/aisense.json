@@ -70,6 +70,102 @@
       ]
     },
     {
+      "id": "hallucination",
+      "statement": "AI does not know when it is wrong.",
+      "explanation": "AI does not fact check itself. For AI, facts and false information are all the same. They are just words. AI is a statistical machine. AI picks the most likely next word based on patterns, not based on what is true. AI does not know right from wrong because AI has no concept of truth. AI just has patterns.\n\nThis is where the harness matters. Good harnesses add a layer that checks facts using external sources. Need a cricket score? The harness can connect AI to a live scores API. Need a stock price? The harness can check the market. Need to verify a date? The harness can search the web. AI does not know these facts on its own. The harness gives AI access to real data.\n\nIf the harness you are using does not have these tools to fact check, do not trust the output as factual. AI without fact checking tools is just predicting what sounds right. AI with the right tools can actually verify before responding.",
+      "terms": {
+        "hallucination": "When AI confidently writes something that is completely made up. AI is not lying on purpose. AI just cannot tell the difference between real and fake.",
+        "grounding": "When the harness connects AI to real data sources before responding so the output is based on facts, not just predictions.",
+        "tool use": "When AI calls external tools like web search, live APIs, or databases to get real information instead of guessing."
+      },
+      "children": [
+        {
+          "id": "tools-ground-ai",
+          "statement": "Tools give AI a connection to reality.",
+          "explanation": "On its own, AI can only predict text. AI cannot look anything up, check a fact, or access current information. But when an app connects AI to tools like web search, file readers, calculators, or databases, AI can pull in real data before generating a response.\n\nThis is called grounding. Instead of guessing what the weather is, AI checks a weather API. Instead of making up a stock price, AI looks it up. AI is still predicting words, but now some of those predictions are informed by actual facts. The more tools an AI app has, the more reliable the output tends to be.",
+          "terms": {
+            "grounding": "Giving AI access to real information sources so its predictions are based on facts, not just patterns from training data."
+          },
+          "children": []
+        },
+        {
+          "id": "confident-not-correct",
+          "statement": "Confidence is not the same as correctness.",
+          "explanation": "AI never says \"I am not sure about this\" unless specifically instructed to. AI presents everything with the same tone, whether a well established fact or something completely invented. There is no built in signal that tells you when AI is guessing versus when AI actually has strong patterns to draw from.\n\nThis is dangerous because humans naturally trust confident language. When someone says something clearly and without hesitation, we tend to believe them. AI exploits this instinct without meaning to.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "bias",
+          "statement": "AI learned from everything we wrote, good and bad.",
+          "explanation": "AI was trained on billions of pages written by people. That includes great writing, but also stereotypes, outdated views, and plain wrong information. AI does not filter any of this out. AI just picks whatever pattern fits best.\n\nAsk AI to describe a CEO and AI might default to a man. Ask AI about certain countries and AI might repeat outdated stereotypes. This is not AI having opinions. This is AI reflecting patterns from the text it learned from. The training data contained bias, so the output contains bias.",
+          "terms": {
+            "bias": "When AI consistently leans one way because the text it learned from leaned that way. It reflects human writing, the good parts and the bad parts.",
+            "training data": "The massive collection of text AI learned from. Books, websites, articles, forums, code. Everything it knows comes from this data."
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "no-memory",
+      "statement": "AI forgets everything and can only hold so much.",
+      "explanation": "AI does not remember you. When you close a conversation and start a new one, AI has no idea who you are, what you discussed, or what you asked it to do differently. Every new chat is a completely blank slate.\n\nIf an app seems to remember your preferences or your name, that is the app doing it, not the AI. The app saves notes about you and quietly includes them in the system prompt next time. The AI itself has zero memory between conversations.\n\nEven within a single conversation, there is a limit. Everything AI can see at once, the system prompt, conversation history, uploaded files, and your latest message, has to fit in a fixed space called the context window. Think of it like a whiteboard. Once the whiteboard is full, something has to be erased to make room. When the context window fills up, the app starts dropping older messages silently. AI does not tell you something was forgotten. AI just stops seeing those messages.",
+      "experiment": {
+        "intro": "Try this in two separate conversations to prove AI has no memory:",
+        "prompts": [
+          {
+            "label": "Step 1: Tell it your name",
+            "text": "My name is Alex and I prefer short answers. Remember this.",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=My%20name%20is%20Alex%20and%20I%20prefer%20short%20answers.%20Remember%20this."
+          },
+          {
+            "label": "Step 2: New chat, ask for your name",
+            "text": "What is my name and how do I prefer my answers?",
+            "link": "https://chatgpt.com/?temporary-chat=true&prompt=What%20is%20my%20name%20and%20how%20do%20I%20prefer%20my%20answers%3F"
+          }
+        ],
+        "result": "In step 2, AI has no idea who you are. It cannot recall anything from step 1 because that conversation is gone. The temporary chat ensures no app level memory kicks in. Every conversation is independent. What you said in one chat does not exist in another."
+      },
+      "terms": {
+        "stateless": "AI does not carry information between conversations. Each chat starts fresh with no knowledge of previous interactions.",
+        "memory features": "Some apps save notes about you and inject them into the system prompt. This is app level memory, not AI memory. The AI still starts fresh every time.",
+        "context window": "The fixed amount of text AI can see at once. When it fills up, older messages get dropped silently."
+      },
+      "children": [
+        {
+          "id": "app-memory",
+          "statement": "When AI remembers you, that is the app talking.",
+          "explanation": "ChatGPT has a memory feature. Claude has project instructions. These are not AI remembering you. These are apps storing text about you and pasting that text into the system prompt before every conversation.\n\nThis means the app controls what AI knows about you. The app decides what to save, what to include, and what to leave out. You can usually view and edit these saved memories in the app settings. If something feels off about how AI talks to you, check what the app has stored.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "context-window",
+          "statement": "There is a limit to how much fits.",
+          "explanation": "All of this, the system prompt, conversation history, uploaded files, your latest message, has to fit in a fixed space called the context window. Think of it like a whiteboard. Once the whiteboard is full, something has to be erased to make room.\n\nWhen the context window fills up, the app starts dropping older messages. AI does not tell you something was forgotten. AI just stops seeing those messages. This is why AI might suddenly forget your name or ignore instructions you gave earlier in the conversation.",
+          "terms": {
+            "context window": "The fixed amount of text AI can see at once. When it fills up, older messages get dropped silently."
+          },
+          "children": []
+        },
+        {
+          "id": "start-fresh",
+          "statement": "Starting over is sometimes the best move.",
+          "explanation": "Long conversations accumulate noise. Old instructions, wrong turns, conflicting requests, all of it stays in the context and influences every new response. Sometimes the best thing you can do is start a new conversation.\n\nCopy the key information you need, open a fresh chat, and give it a clean prompt. You will often get better results in one clean message than in a messy conversation that has been going back and forth for an hour.",
+          "terms": {},
+          "children": []
+        },
+        {
+          "id": "context-is-temporary",
+          "statement": "Everything you share disappears when you close the chat.",
+          "explanation": "Any document you uploaded, any personal detail you shared, any correction you made, all of that exists only within that one conversation. Close the chat and AI has no access to any of that information.\n\nThis is worth knowing for two reasons. First, you need to re-share relevant context in every new chat. Second, sensitive information you share in a conversation does not persist in AI itself, though the app may store conversation logs separately.",
+          "terms": {},
+          "children": []
+        }
+      ]
+    },
+    {
       "id": "context-structure",
       "statement": "You are not the only one talking to AI.",
       "explanation": "When you type a message, you see only your words. But AI sees much more. Your message is just one part of a larger context that gets sent every time. The app assembles this context behind the scenes before AI reads a single word from you.\n\nAt the top sits the system prompt, a set of hidden instructions written by the app developer. Below that is your full conversation history, every message you sent and every response AI gave, replayed from the beginning. Your latest message goes at the very bottom. AI reads all of this, top to bottom, every single time you hit send.",
@@ -117,15 +213,6 @@
           "explanation": "AI does not remember your previous message. AI has no memory at all. Every time you hit send, the app sends the full conversation from the beginning. The system prompt, then message 1, response 1, message 2, response 2, all the way to your latest message.\n\nThis is why long conversations slow down. More messages means more text to process every single time. And this is why starting a new conversation sometimes gives better results. You get a clean context without all the accumulated noise.",
           "terms": {},
           "children": []
-        },
-        {
-          "id": "context-window",
-          "statement": "There is a limit to how much fits.",
-          "explanation": "All of this, the system prompt, conversation history, uploaded files, your latest message, has to fit in a fixed space called the context window. Think of it like a whiteboard. Once the whiteboard is full, something has to be erased to make room.\n\nWhen the context window fills up, the app starts dropping older messages. AI does not tell you something was forgotten. AI just stops seeing those messages. This is why AI might suddenly forget your name or ignore instructions you gave earlier in the conversation.",
-          "terms": {
-            "context window": "The fixed amount of text AI can see at once. When it fills up, older messages get dropped silently."
-          },
-          "children": []
         }
       ]
     },
@@ -162,92 +249,6 @@
           "id": "harness-trust",
           "statement": "The harness decides what you can trust.",
           "explanation": "An AI app with web search, fact checking tools, and strict citation requirements will give you more reliable answers than a bare AI chatbot with no tools at all. The difference is not the AI. The difference is the harness.\n\nBefore you trust an AI response, think about what harness produced it. Does this app have access to real data? Does AI cite sources? Are there safety checks? A strong harness makes AI more useful. A weak harness makes AI more dangerous.",
-          "terms": {},
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "hallucination",
-      "statement": "AI does not know when it is wrong.",
-      "explanation": "AI does not fact check itself. For AI, facts and false information are all the same. They are just words. AI is a statistical machine. AI picks the most likely next word based on patterns, not based on what is true. AI does not know right from wrong because AI has no concept of truth. AI just has patterns.\n\nThis is where the harness matters. Good harnesses add a layer that checks facts using external sources. Need a cricket score? The harness can connect AI to a live scores API. Need a stock price? The harness can check the market. Need to verify a date? The harness can search the web. AI does not know these facts on its own. The harness gives AI access to real data.\n\nIf the harness you are using does not have these tools to fact check, do not trust the output as factual. AI without fact checking tools is just predicting what sounds right. AI with the right tools can actually verify before responding.",
-      "terms": {
-        "hallucination": "When AI confidently writes something that is completely made up. AI is not lying on purpose. AI just cannot tell the difference between real and fake.",
-        "grounding": "When the harness connects AI to real data sources before responding so the output is based on facts, not just predictions.",
-        "tool use": "When AI calls external tools like web search, live APIs, or databases to get real information instead of guessing."
-      },
-      "children": [
-        {
-          "id": "tools-ground-ai",
-          "statement": "Tools give AI a connection to reality.",
-          "explanation": "On its own, AI can only predict text. AI cannot look anything up, check a fact, or access current information. But when an app connects AI to tools like web search, file readers, calculators, or databases, AI can pull in real data before generating a response.\n\nThis is called grounding. Instead of guessing what the weather is, AI checks a weather API. Instead of making up a stock price, AI looks it up. AI is still predicting words, but now some of those predictions are informed by actual facts. The more tools an AI app has, the more reliable the output tends to be.",
-          "terms": {
-            "grounding": "Giving AI access to real information sources so its predictions are based on facts, not just patterns from training data."
-          },
-          "children": []
-        },
-        {
-          "id": "confident-not-correct",
-          "statement": "Confidence is not the same as correctness.",
-          "explanation": "AI never says \"I am not sure about this\" unless specifically instructed to. AI presents everything with the same tone, whether a well established fact or something completely invented. There is no built in signal that tells you when AI is guessing versus when AI actually has strong patterns to draw from.\n\nThis is dangerous because humans naturally trust confident language. When someone says something clearly and without hesitation, we tend to believe them. AI exploits this instinct without meaning to.",
-          "terms": {},
-          "children": []
-        },
-        {
-          "id": "bias",
-          "statement": "AI learned from everything we wrote, good and bad.",
-          "explanation": "AI was trained on billions of pages written by people. That includes great writing, but also stereotypes, outdated views, and plain wrong information. AI does not filter any of this out. AI just picks whatever pattern fits best.\n\nAsk AI to describe a CEO and AI might default to a man. Ask AI about certain countries and AI might repeat outdated stereotypes. This is not AI having opinions. This is AI reflecting patterns from the text it learned from. The training data contained bias, so the output contains bias.",
-          "terms": {
-            "bias": "When AI consistently leans one way because the text it learned from leaned that way. It reflects human writing, the good parts and the bad parts.",
-            "training data": "The massive collection of text AI learned from. Books, websites, articles, forums, code. Everything it knows comes from this data."
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "no-memory",
-      "statement": "AI forgets you the moment you leave.",
-      "explanation": "AI does not remember you. When you close a conversation and start a new one, AI has no idea who you are, what you discussed, or what you asked it to do differently. Every new chat is a completely blank slate.\n\nIf an app seems to remember your preferences or your name, that is the app doing it, not the AI. The app saves notes about you and quietly includes them in the system prompt next time. The AI itself has zero memory between conversations.",
-      "experiment": {
-        "intro": "Try this in two separate conversations to prove AI has no memory:",
-        "prompts": [
-          {
-            "label": "Step 1: Tell it your name",
-            "text": "My name is Alex and I prefer short answers. Remember this.",
-            "link": "https://chatgpt.com/?temporary-chat=true&prompt=My%20name%20is%20Alex%20and%20I%20prefer%20short%20answers.%20Remember%20this."
-          },
-          {
-            "label": "Step 2: New chat, ask for your name",
-            "text": "What is my name and how do I prefer my answers?",
-            "link": "https://chatgpt.com/?temporary-chat=true&prompt=What%20is%20my%20name%20and%20how%20do%20I%20prefer%20my%20answers%3F"
-          }
-        ],
-        "result": "In step 2, AI has no idea who you are. It cannot recall anything from step 1 because that conversation is gone. The temporary chat ensures no app level memory kicks in. Every conversation is independent. What you said in one chat does not exist in another."
-      },
-      "terms": {
-        "stateless": "AI does not carry information between conversations. Each chat starts fresh with no knowledge of previous interactions.",
-        "memory features": "Some apps save notes about you and inject them into the system prompt. This is app level memory, not AI memory. The AI still starts fresh every time."
-      },
-      "children": [
-        {
-          "id": "app-memory",
-          "statement": "When AI remembers you, that is the app talking.",
-          "explanation": "ChatGPT has a memory feature. Claude has project instructions. These are not AI remembering you. These are apps storing text about you and pasting that text into the system prompt before every conversation.\n\nThis means the app controls what AI knows about you. The app decides what to save, what to include, and what to leave out. You can usually view and edit these saved memories in the app settings. If something feels off about how AI talks to you, check what the app has stored.",
-          "terms": {},
-          "children": []
-        },
-        {
-          "id": "start-fresh",
-          "statement": "Starting over is sometimes the best move.",
-          "explanation": "Long conversations accumulate noise. Old instructions, wrong turns, conflicting requests, all of it stays in the context and influences every new response. Sometimes the best thing you can do is start a new conversation.\n\nCopy the key information you need, open a fresh chat, and give it a clean prompt. You will often get better results in one clean message than in a messy conversation that has been going back and forth for an hour.",
-          "terms": {},
-          "children": []
-        },
-        {
-          "id": "context-is-temporary",
-          "statement": "Everything you share disappears when you close the chat.",
-          "explanation": "Any document you uploaded, any personal detail you shared, any correction you made, all of that exists only within that one conversation. Close the chat and AI has no access to any of that information.\n\nThis is worth knowing for two reasons. First, you need to re-share relevant context in every new chat. Second, sensitive information you share in a conversation does not persist in AI itself, though the app may store conversation logs separately.",
           "terms": {},
           "children": []
         }
