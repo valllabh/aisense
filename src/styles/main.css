@@ -186,7 +186,7 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-9);
-  padding: var(--spacing-9) var(--padding-h) 0;
+  padding: var(--spacing-6) var(--padding-h) 0;
   margin-bottom: auto;
 }
 
