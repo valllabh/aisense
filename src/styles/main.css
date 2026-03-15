@@ -615,6 +615,11 @@ hr {
   color: var(--color-contrast);
 }
 
+.copy-button:hover {
+  color: var(--color-contrast);
+  background-color: var(--color-border);
+}
+
 .experiment-result {
   margin-top: var(--spacing-5);
   font-size: var(--font-small);
