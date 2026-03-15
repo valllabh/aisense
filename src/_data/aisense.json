@@ -59,8 +59,8 @@
     },
     {
       "id": "no-memory",
-      "statement": "AI forgets everything and can only read so much at a time.",
-      "explanation": "AI does not remember you. When you close a conversation and start a new one, AI has no idea who you are, what you discussed, or what you asked it to do differently. Every new chat is a completely blank slate.\n\nIf an app seems to remember your preferences or your name, that is the app doing it, not the AI. The app saves notes about you and quietly includes them in the system prompt next time. The AI itself has zero memory between conversations.\n\nEven within a single conversation, there is a limit. Everything AI can see at once, the system prompt, conversation history, uploaded files, and your latest message, has to fit in a fixed space called the context window. Think of it like a whiteboard. Once the whiteboard is full, something has to be erased to make room. When the context window fills up, the app starts dropping older messages silently. AI does not tell you something was forgotten. AI just stops seeing those messages.",
+      "statement": "AI forgets you the moment you leave.",
+      "explanation": "AI does not remember you. When you close a conversation and start a new one, AI has no idea who you are, what you discussed, or what you asked it to do differently. Every new chat is a completely blank slate.\n\nImagine calling a restaurant every day and giving detailed food preferences. Every single call, the person who picks up has never spoken to you before. You have to explain everything from scratch. That is what talking to AI is like. No matter how long your last conversation was, the next one starts from zero.\n\nIf an app seems to remember your name or preferences, that is the app doing it, not the AI. Apps like ChatGPT save notes about you behind the scenes and quietly paste them into every new conversation. The AI itself has zero memory. The app is faking it.\n\nThis also means anything you shared in a conversation, documents, personal details, corrections, all of that disappears the moment you close the chat. If you need AI to know something, you have to tell AI again every single time.",
       "experiment": {
         "intro": "Try this in two separate conversations to prove AI has no memory:",
         "prompts": [
@@ -79,8 +79,7 @@
       },
       "terms": {
         "stateless": "AI does not carry information between conversations. Each chat starts fresh with no knowledge of previous interactions.",
-        "memory features": "Some apps save notes about you and inject them into the system prompt. This is app level memory, not AI memory. The AI still starts fresh every time.",
-        "context window": "The fixed amount of text AI can see at once. When it fills up, older messages get dropped silently."
+        "memory features": "Some apps save notes about you and inject them into the system prompt. This is app level memory, not AI memory. The AI still starts fresh every time."
       },
       "children": []
     },
