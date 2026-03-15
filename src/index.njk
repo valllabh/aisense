@@ -6,15 +6,19 @@ title: AI Sense
 <div class="section-hero">
   <div class="dictionary-entry">
     <h1 class="dictionary-word">AI Sense</h1>
-    <span class="dictionary-phonetic">/ey-eye sens/</span>
-    <span class="dictionary-pos">noun</span>
-    <p class="dictionary-def">Common sense for working with AI.</p>
+    <div class="dictionary-meta">
+      <span class="dictionary-phonetic">/ey-eye sens/</span>
+      <span class="dictionary-pos">noun</span>
+    </div>
+    <ol class="dictionary-defs">
+      <li>The basic intuitions a person needs before using any AI tool.</li>
+      <li>A practical understanding of how AI actually works, what AI can and cannot do, and why the same AI behaves differently in different apps.</li>
+    </ol>
+    <p class="dictionary-example">"You don't need a PhD in machine learning. You just need AI Sense."</p>
   </div>
 </div>
 
-<div class="section">
-  <div class="section-title">{{ aisense.statements | length }} {{ "Sense" if aisense.statements | length == 1 else "Senses" }}</div>
-
+<div class="section" style="margin-top: var(--spacing-8);">
   <div class="section-list">
     {% for item in aisense.statements %}
     <article class="card">
