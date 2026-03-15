@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ description or 'AI Sense: 7 gut feelings you need before you touch any AI tool' }}" />
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | url }}" />
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
     <title>{{ title or 'AI Sense' }}</title>
@@ -16,9 +15,7 @@
       })();
     </script>
   </head>
-  <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-
+  <body style="overflow:hidden;">
     <header class="site-header">
       <div class="site-header-inner">
         <a href="{{ '/' | url }}" class="site-logo">AI Sense</a>
@@ -32,28 +29,18 @@
       </div>
     </header>
 
-    <div class="content" id="main">
-      <div class="container">
-        {{ content | safe }}
-      </div>
-    </div>
-
-    <footer class="site-footer">
-      <span class="footer-copy">AI Sense v{{ aisense.version }} &middot; {{ aisense.date }}</span>
-    </footer>
+    {{ content | safe }}
 
     <script>
       (function() {
         var btn = document.getElementById('theme-toggle');
         var lightIcon = document.getElementById('theme-icon-light');
         var darkIcon = document.getElementById('theme-icon-dark');
-
         function update() {
           var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
           lightIcon.style.display = isDark ? 'inline' : 'none';
           darkIcon.style.display = isDark ? 'none' : 'inline';
         }
-
         btn.addEventListener('click', function() {
           var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
           if (isDark) {
@@ -65,7 +52,6 @@
           }
           update();
         });
-
         update();
       })();
     </script>
