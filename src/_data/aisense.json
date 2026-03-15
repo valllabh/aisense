@@ -118,6 +118,8 @@
     {
       "id": "harness",
       "statement": "The app around AI matters more than the AI itself.",
+      "image": "/assets/sense-3-harness.png",
+      "imageAlt": "Exploded view showing AI Model as engine at bottom, Harness as chassis in middle, and complete AI App as car body on top",
       "explanation": "ChatGPT, Claude, Gemini, t3.chat all use similar AI technology underneath. What makes them feel completely different is the harness built around that AI.\n\nA harness is made up of several components. The instructions tell AI how to behave and what personality to have. The safety filters control what AI can and cannot say. The tools give AI abilities like searching the web, running code, or reading files. The memory decides whether AI remembers you between conversations. The context management controls how much information AI can hold at once and what gets dropped when space runs out.\n\nThink of the AI model as an engine. The harness is the steering wheel, the brakes, the dashboard, and the road rules all combined. The same engine inside two different cars drives very differently. Same with AI. The same model inside ChatGPT and t3.chat behaves like two completely different products because the harness is different.",
       "terms": {
         "harness": "Everything an app wraps around the AI model. Made up of instructions, safety filters, tools, memory, and context management. The harness shapes how AI behaves, what AI can do, and what AI is allowed to say.",
