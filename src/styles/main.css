@@ -198,31 +198,42 @@ button:focus-visible {
 
 /* ---- Hero section ---- */
 .section-hero {
-  text-align: center;
+  text-align: left;
 }
 
-.section-hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-3);
-  max-width: var(--container-small);
+.dictionary-entry {
+  max-width: var(--container-width);
   margin: 0 auto;
   width: 100%;
 }
 
-.section-hero h1 {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.3;
+.dictionary-word {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--color-contrast);
-  margin: 0;
+  margin: 0 0 var(--spacing-2) 0;
 }
 
-.section-hero p {
-  margin: 0;
-  color: var(--color-foreground);
+.dictionary-phonetic {
+  color: var(--color-mute);
   font-size: var(--font-small);
+  margin-right: var(--spacing-3);
+}
+
+.dictionary-pos {
+  font-style: italic;
+  color: var(--color-mute);
+  font-size: var(--font-small);
+}
+
+.dictionary-def {
+  margin: var(--spacing-3) 0 0 0;
+  color: var(--color-foreground);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: var(--spacing-4);
+  border-left: 2px solid var(--color-accent);
 }
 
 /* ---- Section title (divider with text) ---- */
