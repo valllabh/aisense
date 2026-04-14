@@ -55,9 +55,7 @@ eleventyComputed:
 {% endif %}
 
 {% if item.experiment %}
-<div class="section" style="margin-top: var(--spacing-9);">
-  <div class="section-title">Try It Yourself</div>
-  <p style="color: var(--color-foreground); font-size: var(--font-small); margin-bottom: var(--spacing-5);">{{ item.experiment.intro }}</p>
+  <p style="color: var(--color-contrast); font-size: var(--font-large); font-weight: 600; margin-top: var(--spacing-3); margin-bottom: var(--spacing-5);">{{ item.experiment.intro }}</p>
   <div class="experiment-grid">
     {% for p in item.experiment.prompts %}
     <div class="experiment-card">
@@ -99,7 +97,6 @@ eleventyComputed:
   </div>
   {% endif %}
   {% endif %}
-</div>
 {% endif %}
 
 {% if item.terms and item.terms | length %}

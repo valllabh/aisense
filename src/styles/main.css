@@ -403,6 +403,11 @@ button:focus-visible {
   color: var(--color-foreground);
 }
 
+.post-content p {
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+}
+
 .post-content > * {
   max-width: var(--container-width);
   margin-left: auto;
